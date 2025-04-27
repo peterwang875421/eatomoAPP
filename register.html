@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>註冊</title>
-  <link rel="stylesheet" href="css/login.css"> <!-- 直接用剛剛那個login.css就可以 -->
+  <link rel="stylesheet" href="./login.css"> <!-- ✅ 加上 ./ -->
 </head>
 <body>
   <div class="login-container">
@@ -20,6 +20,8 @@
 
   </div>
 
+  <script src="./script.js"></script> <!-- ✅ 加上 ./ -->
+  
   <script>
     function register() {
       const username = document.getElementById('registerUsername').value;
@@ -38,11 +40,11 @@
 
       localStorage.setItem('user_' + username, password);
       alert('註冊成功！請登入');
-      window.location.href = 'login.html';
+      window.location.href = './login.html'; // ✅ 加上 ./
     }
 
     function goLogin() {
-      window.location.href = 'login.html';
+      window.location.href = './login.html'; // ✅ 加上 ./
     }
   </script>
 </body>
