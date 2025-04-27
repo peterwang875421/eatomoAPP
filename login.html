@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>登入</title>
-  <link rel="stylesheet" href="./login.css"> <!-- (之後可以加美化) -->
+  <link rel="stylesheet" href="./login.css"> <!-- ✅ 加上 ./ -->
 </head>
 <body>
   <div class="login-container">
@@ -26,6 +26,8 @@
 
   </div>
 
+  <script src="./script.js"></script> <!-- ✅ 加上 ./ -->
+  
   <script>
     function login() {
       const username = document.getElementById('loginUsername').value;
@@ -35,21 +37,21 @@
       if (password === savedPassword) {
         localStorage.setItem('loggedInUser', username);
         alert('登入成功！');
-        window.location.href = 'index.html'; // 登入成功跳首頁
+        window.location.href = './index.html'; // ✅ 保險一點加上./
       } else {
         alert('帳號或密碼錯誤');
       }
     }
 
     function goRegister() {
-      window.location.href = 'register.html'; // 跳註冊
+      window.location.href = './register.html'; // ✅ 保險一點加上./
     }
 
     function socialLogin(provider) {
       const fakeUser = provider + "_user";
       localStorage.setItem('loggedInUser', fakeUser);
       alert(provider + '登入成功！');
-      window.location.href = 'index.html';
+      window.location.href = './index.html'; // ✅ 同上
     }
   </script>
 </body>
