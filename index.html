@@ -4,30 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的食譜菜單APP</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css"> <!-- ✅ 加上 ./ -->
 </head>
 <body>
   <script>
     if (!localStorage.getItem('loggedInUser')) {
       alert('請先登入');
-      window.location.href = 'login.html';
+      window.location.href = './login.html'; // ✅ 加上 ./
     }
   </script>
   
-    <!-- ✅ 左上角酪梨回首頁按鈕 -->
-    <a href="index.html" class="home-button">
-      <img src="images/home-avocado.jpg" alt="回首頁" class="home-icon">
-      <!-- 🎵 背景音樂音量調整器 -->
-      <!-- 背景音樂 -->
-<audio id="backgroundMusic" src="audio/background-music.mp3" autoplay loop preload="auto"></audio>
-    </a>
-    <!-- ✅ 背景音樂音量控制器（獨立div） -->
+  <!-- ✅ 左上角酪梨回首頁按鈕 -->
+  <a href="./index.html" class="home-button"> <!-- ✅ 加上 ./ -->
+    <img src="./images/home-avocado.jpg" alt="回首頁" class="home-icon"> <!-- ✅ 加上 ./ -->
+    <!-- 背景音樂 -->
+    <audio id="backgroundMusic" src="./audio/background-music.mp3" autoplay loop preload="auto"></audio> <!-- ✅ 加上 ./ -->
+  </a>
+
+  <!-- ✅ 背景音樂音量控制器 -->
   <div class="volume-control">
     🔊 音量：
     <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
   </div>
-    <!-- 🎵 隱藏的音效元件 -->
-  <audio id="clickSound" src="audio/click-sound.mp3" preload="auto"></audio>
+
+  <!-- 🎵 隱藏的音效元件 -->
+  <audio id="clickSound" src="./audio/click-sound.mp3" preload="auto"></audio> <!-- ✅ 加上 ./ -->
+
   <div class="page-container">
 
     <!-- 今日資訊卡片 -->
@@ -81,6 +83,6 @@
 
   </div> <!-- /page-container -->
 
-  <script src="js/script.js"></script>
+  <script src="./js/script.js"></script> <!-- ✅ 加上 ./ -->
 </body>
 </html>
