@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>歡迎來到 Eatomo</title>
-  <link rel="stylesheet" href="css/welcome.css">
+  <link rel="stylesheet" href="./css/welcome.css"> <!-- ✅ 加上 ./ -->
 </head>
 <body>
   <!-- 歡迎介面 -->
@@ -11,16 +11,21 @@
     <!-- 歡迎框 -->
     <div class="welcome-box">
       <h1 class="welcome-text">歡迎來到 吃光光Eatomo APP！</h1>
-      <p class="sub-text">進入智能飲食的世界吧~</p>
-      <button onclick="goToLogin()">進入登入頁</button>
+      <p class="sub-text">進入智能飲食的世界吧～</p>
+      <button id="enterButton">🚀 進入登入頁</button>
     </div>
   </div>
 
   <script>
     function goToLogin() {
-      window.location.href = 'login.html'; // 跳轉到登入頁
+      // ✅ 加一個簡單的轉場特效（延遲1秒再跳轉）
+      setTimeout(function() {
+        window.location.href = './login.html'; // ✅ 加上 ./
+      }, 300); // 300毫秒（0.3秒），讓按鈕點擊後感覺更順
     }
 
+    // 綁定按鈕點擊事件
+    document.getElementById('enterButton').addEventListener('click', goToLogin);
   </script>
 </body>
 </html>
